@@ -18,8 +18,8 @@ This behavior is used to add overlay capabilities on the context element.
 @behavior xp-targeter-behavior http://expandjs.com/elements/xp-targeter-behavior
 
 @dependency polymer Polymer/polymer#^1.0.0
-@dependency expandjs ExpandJS/expandjs#0.9.3
-@dependency xp-targeter-behavior ExpandJS/xp-targeter-behavior#0.9.3
+@dependency expandjs ExpandJS/expandjs#0.9.4
+@dependency xp-targeter-behavior ExpandJS/xp-targeter-behavior#0.9.4
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -56,7 +56,7 @@ This behavior is used to add overlay capabilities on the context element.
          * Shows the overlay.
          *
          * @method show
-         * @param {Element | string} target
+         * @param {Element | string} [target]
          * @param {*} [data]
          * @returns {Element}
          */
@@ -70,7 +70,7 @@ This behavior is used to add overlay capabilities on the context element.
 
             // Setting
             self.target = target || self.target;
-            self.data   = data || (self.findTarget() || {}).data || null;
+            self.data   = data || (self.findTarget() || self).data || self.data;
             self.showed = true;
 
             return self;
@@ -104,6 +104,16 @@ This behavior is used to add overlay capabilities on the context element.
                 reflectToAttribute: true,
                 type: Boolean,
                 value: false
+            },
+
+            /**
+             * The context element.
+             *
+             * @attribute context
+             * @type Element
+             */
+            context: {
+                value: null
             },
 
             /**
