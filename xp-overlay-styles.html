@@ -16,7 +16,7 @@ This stylesheet is used to stylize an overlay element.
 @homepage http://expandjs.com/elements/xp-overlay-styles
 @repository https://github.com/ExpandJS/xp-overlay-behavior
 
-@dependency polymer Polymer/polymer#^1.0.0
+@dependency polymer Polymer/polymer#^1.1.0
 -->
 
 <link rel="import" href="../polymer/polymer.html">
@@ -34,6 +34,7 @@ This stylesheet is used to stylize an overlay element.
                 text-align: left;
                 transition: opacity 0.2s, visibility 0.2s;
                 visibility: hidden;
+                will-change: opacity, visibility;
                 z-index: 9999;
             }
 
