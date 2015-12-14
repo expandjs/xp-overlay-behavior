@@ -1,3 +1,3 @@
 # xp-overlay-behavior
 
-See the [`documentation page`](http://expandjs.com/elements/xp-overlay-behavior) for more information.
+This repository **is deprecated**. It's been merged with [`xp-overlay`](https://github.com/expandjs/xp-overlay).
